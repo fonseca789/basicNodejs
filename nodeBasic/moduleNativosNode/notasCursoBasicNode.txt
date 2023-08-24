@@ -1,0 +1,21 @@
+Reflexiones y nodas.
+
+existe un objeto global que comparte node y windows que son los mismo pero como sabemos en windows
+existe el objeto windows y en node apunta global. El nombre de objeto que referencia a ambos
+objeto es  GLOBALTHIS
+
+el uso de las promesa y async es mas optimos, hay modulos que no tiene
+promisse, existe una utilidad en util que me permite usar promisse nativamente
+en modulo que no lo tiene
+
+ejemplo: 
+const fs = require('node:fs');
+const {promisify} = require('node:util');
+
+const readFilePromise = promisify(fs.readFile);
+
+fs.readFilePromise('./archivo.txt', 'utf-8') .then (
+    text => {
+        console.log('archivo.txt :', text)
+    }
+)
